@@ -2,8 +2,8 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "preLaunchTask": "frida",
-      "name": "Attach",
+      "preLaunchTask": "Build&Frida",
+      "name": "Build&Frida",
       "port": 9229,
       "request": "attach",
       "skipFiles": [

@@ -8,12 +8,23 @@ import { DeviceItem, TargetItem } from '../providers/devices';
 import { logger } from '../logger';
 import { interpreter, sleep } from '../utils';
 import { run } from '../term';
+import { rebootWSA, startWSA, stopWSA } from '../driver/wsa';
+
 
 function getServerPath() {
   return vscode.workspace.getConfiguration('frida')
     .get('androidServerPath', '/data/local/tmp/frida-server');
 }
 
+export async function StartWSA(): Promise<void> {
+  startWSA();
+}
+export async function StopWSA(): Promise<void> {
+  stopWSA();
+}
+export async function RebootWSA(): Promise<void> {
+  rebootWSA();
+}
 export async function startServer(target: TargetItem) {
   if (!(target instanceof DeviceItem)) {
     vscode.window.showErrorMessage('This command is only expected to be used in the context menu');

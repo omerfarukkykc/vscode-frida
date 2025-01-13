@@ -133,6 +133,9 @@ export async function debug(node?: AppItem | ProcessItem) {
   // attach current document to the target
   if (activeTextEditor && !activeTextEditor.document.isDirty) {
     cmd.push('-l', quote(activeTextEditor.document.uri.fsPath));
+  }else{
+    cmd.push('-l', joinPath(dest.fsPath, '_agent.js'));
+    
   }
 
   // enable v8 debug

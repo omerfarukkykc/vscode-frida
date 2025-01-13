@@ -38,6 +38,14 @@
                     ],
                     "default": "/data/local/tmp/frida-server",
                     "description": "Path to frida-server on Android"
+                },
+                "wsa.adbAddress": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": "localhost:58526",
+                    "description": "Path to adb"
                 }
             }
         },
@@ -68,6 +76,33 @@
                     "dark": "resources/dark/add.svg"
                 },
                 "category": "Frida"
+            },
+            {
+                "command": "wsa.start",
+                "title": "Start WSA",
+                "icon": {
+                    "light": "resources/light/statusRun.svg",
+                    "dark": "resources/light/statusRun.svg"
+                },
+                "category": "WSA"
+            },
+            {
+                "command": "wsa.stop",
+                "title": "Stop WSA",
+                "icon": {
+                    "light": "resources/light/statusStop.svg",
+                    "dark": "resources/dark/statusStop.svg"
+                },
+                "category": "WSA"
+            },
+            {
+                "command": "wsa.reboot",
+                "title": "Reboot WSA",
+                "icon": {
+                    "light": "resources/light/refresh.svg",
+                    "dark": "resources/dark/refresh.svg"
+                },
+                "category": "WSA"
             },
             {
                 "command": "frida.remote.remove",
@@ -196,6 +231,10 @@
         "views": {
             "frida-sidebar": [
                 {
+                    "id": "wsa",
+                    "name": "WSA Operations"
+                },
+                {
                     "id": "fridaApps",
                     "name": "Apps"
                 },
@@ -221,6 +260,15 @@
                 },
                 {
                     "command": "frida.remote.add"
+                },
+                {
+                    "command": "wsa.start"
+                },
+                {
+                    "command": "wsa.stop"
+                },
+                {
+                    "command": "wsa.reboot"
                 },
                 {
                     "command": "frida.remote.remove"
@@ -294,6 +342,9 @@
                 }
             ],
             "view/title": [
+                {"command":"wsa.start","when":"view == wsa","group":"navigation@1"},
+                {"command":"wsa.stop","when":"view == wsa","group":"navigation@2"},
+                {"command":"wsa.reboot","when":"view == wsa","group":"navigation@3"},
                 {
                     "command": "frida.remote.add",
                     "when": "view == fridaApps",

@@ -58,6 +58,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 	push(register('frida.print.classes', print.classes));
 	push(register('frida.print.modules', print.modules));
+
+	push(register('wsa.start', android.StartWSA));
+	push(register('wsa.stop', android.StopWSA));
+	push(register('wsa.reboot', android.RebootWSA));
 }
 
 // this method is called when your extension is deactivated
