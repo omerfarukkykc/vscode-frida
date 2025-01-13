@@ -1,4 +1,11 @@
 # vscode-frida
+## About This Fork
+
+This fork was specifically created to introduce and enhance Windows Subsystem for Android (WSA) operations. It aims to provide a range of features and functionalities related to WSA, which are currently in development. 
+
+Please note that this fork is still in an experimental phase and is not yet stable. Users should expect potential bugs or incomplete features. We are actively working on improving stability and adding more robust support for WSA operations.
+
+Your feedback and contributions are welcome as we continue to develop and refine this project. 
 
 **Unofficial** frida workbench for VSCode [![](https://img.shields.io/visual-studio-marketplace/v/CodeColorist.vscode-frida?color=%230af&label=install&logo=visual-studio-code&logoColor=%230ac&style=plastic)](https://marketplace.visualstudio.com/items?itemName=CodeColorist.vscode-frida)
 
