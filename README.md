@@ -1,4 +1,4 @@
-# vscode-frida
+# vscode-frida for Windows Subsystem for Android (WSA) 
 ## About This Fork
 
 This fork was specifically created to introduce and enhance Windows Subsystem for Android (WSA) operations. It aims to provide a range of features and functionalities related to WSA, which are currently in development. 

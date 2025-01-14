@@ -15,6 +15,7 @@ import * as ssh from './commands/ssh';
 import * as syslog from './commands/syslog';
 import * as typing from './commands/typing';
 import * as print from './commands/print';
+import { WsaProvider } from './providers/wsa';
 
 export function activate(context: vscode.ExtensionContext) {
 	const register = (cmd: string, cb: (...args: any[]) => any) => vscode.commands.registerCommand(cmd, cb);
@@ -22,7 +23,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const appsProvider = new DevicesProvider(ProviderType.Apps);
 	vscode.window.registerTreeDataProvider('fridaApps', appsProvider);
-
+	
+	const wsaProvider = new WsaProvider();
+	vscode.window.registerTreeDataProvider('wsa', wsaProvider);
+  
 	push(register('frida.apps.refresh', () => appsProvider.refresh()));
 
 	const psProvider = new DevicesProvider(ProviderType.Processes);
